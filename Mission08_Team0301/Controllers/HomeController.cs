@@ -18,7 +18,12 @@ namespace Mission08_Team0301.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Task()
+        {
+            return View();
+        }
+
+        public IActionResult Quadrants()
         {
             return View();
         }
