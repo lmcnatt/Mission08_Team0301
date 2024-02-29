@@ -18,15 +18,14 @@ namespace Mission08_Team0301.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Task()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Quadrants()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
     }
 }
