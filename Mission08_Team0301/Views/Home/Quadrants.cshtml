@@ -42,5 +42,106 @@
                 </tbody>
             </table>
         </div>
+        <div class="col-6">
+            <h4>Quadrant 2</h4>
+            <table class="table table_bordered">
+                <thead class="fw-bold">
+                    <tr>
+                        <td>Task Name</td>
+                        <td>Due Date</td>
+                        <td>Category</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var t in Model)
+                    {
+                        @if (@t.Quadrant == 2 && @t.Completed == false)
+                        {
+                            <tr>
+                                <td>@t.JobName</td>
+                                <td>@t.DueDate</td>
+                                <td>@t.Category</td>
+                                <td>
+                                    <form asp-controller="Home" asp-action="Complete" asp-route-id="@t.JobId" method="post">
+                                        <button class="btn btn-success" type="submit">Complete</button>
+                                    </form>
+                                </td>
+                                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@t.JobId">Edit</a></td>
+                                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@t.JobId">Delete</a></td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <h4>Quadrant 3</h4>
+            <table class="table table_bordered">
+                <thead class="fw-bold">
+                    <tr>
+                        <td>Task Name</td>
+                        <td>Due Date</td>
+                        <td>Category</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var t in Model)
+                    {
+                        @if (@t.Quadrant == 3 && @t.Completed == false)
+                        {
+                            <tr>
+                                <td>@t.JobName</td>
+                                <td>@t.DueDate</td>
+                                <td>@t.Category</td>
+                                <td>
+                                    <form asp-controller="Home" asp-action="Complete" asp-route-id="@t.JobId" method="post">
+                                        <button class="btn btn-success" type="submit">Complete</button>
+                                    </form>
+                                </td>
+                                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@t.JobId">Edit</a></td>
+                                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@t.JobId">Delete</a></td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-6">
+            <h4>Quadrant 4</h4>
+            <table class="table table_bordered">
+                <thead class="fw-bold">
+                    <tr>
+                        <td>Task Name</td>
+                        <td>Due Date</td>
+                        <td>Category</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var t in Model)
+                    {
+                        @if (@t.Quadrant == 4 && @t.Completed == false)
+                        {
+                            <tr>
+                                <td>@t.JobName</td>
+                                <td>@t.DueDate</td>
+                                <td>@t.Category</td>
+                                <td>
+                                    <form asp-controller="Home" asp-action="Complete" asp-route-id="@t.JobId" method="post">
+                                        <button class="btn btn-success" type="submit">Complete</button>
+                                    </form>
+                                </td>
+                                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@t.JobId">Edit</a></td>
+                                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@t.JobId">Delete</a></td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
