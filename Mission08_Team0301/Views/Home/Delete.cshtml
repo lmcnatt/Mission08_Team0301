@@ -3,13 +3,13 @@
 *@
 @{
 }
-@model Task
+@model Job
 <h2>Confirm Deletion</h2>
-<h3>@Model.TaskName</h3>
+<h3>@Model.JobName</h3>
 
 <form method="post">
 
-    <input type="hidden" asp-for="TaskId" />
+    <input type="hidden" asp-for="JobId" />
     <button type="submit" class="btn btn-danger">Delete</button>
     <a class="btn btn-info" asp-controller="Home" asp-action="Quadrants">Cancel</a>
 </form>

@@ -3,14 +3,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mission08_Team0301.Models
 {
-    public class Task
+    public class Job
     {
         [Key]
         [Required]
-        public int TaskId { get; set; }
+        public int JobId { get; set; }
 
         [Required]
-        public string TaskName { get; set; }
+        public string JobName { get; set; }
 
         public string? DueDate { get; set; }
 

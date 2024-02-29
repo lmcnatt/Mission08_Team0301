@@ -4,7 +4,7 @@
 @{
 }
 
-@model Task
+@model Job
 
 <h1 style="align-content:center">Add or Edit a Task</h1>
 
@@ -12,9 +12,11 @@
 <div>
     <form method="post">
 
-        @* Task (Required) *@
-        <label asp-for="TaskName">Task Name:</label>
-        <input asp-for="TaskName"/>
+        <input asp-for="JobId" type="hidden" />
+
+        @* Job (Required) *@
+        <label asp-for="JobName">Task Name:</label>
+        <input asp-for="JobName"/>
         <br />
 
         @* Due Date (Not Required) *@
@@ -30,10 +32,10 @@
         @* Category (Not Required, Dropdown: Home, School, Work, Church) *@
         <label asp-for="Category">Category:</label>
         <select asp-for="Category">
-            <option value="home">Home</option>
-            <option value="school">School</option>
-            <option value="work">Work</option>
-            <option value="church">Church</option>
+            <option value="Home">Home</option>
+            <option value="School">School</option>
+            <option value="Work">Work</option>
+            <option value="Church">Church</option>
         </select>
         <br />
 
@@ -44,17 +46,10 @@
             <option value="false">No</option>
         </select>
         <br />
-
-        <label asp-for="CopiedToPlex">Copied to Plex:</label>
-        <select asp-for="CopiedToPlex" required>
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-        </select>
-        <br />
         <br />
 
         @* Submit Button *@
-        <button type="submit">Add Task</button>
+        <button type="submit">Add/Edit Task</button>
 
         @* Validate Form *@
         <div asp-validation-summary="All"></div>

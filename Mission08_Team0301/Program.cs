@@ -6,10 +6,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<AddTaskContext>(options =>
+builder.Services.AddDbContext<JobContext>(options =>
 {
-    options.UseSqlite(builder.Configuration["ConnectionString: TaskConnection"]);
+    options.UseSqlite(builder.Configuration["ConnectionString:JobConnection"]);
 });
+
+builder.Services.AddScoped<IJobRepository, EFJobRepository>();
 
 var app = builder.Build();
 
