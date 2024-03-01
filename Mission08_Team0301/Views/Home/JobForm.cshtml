@@ -7,49 +7,67 @@
 @model Job
 
 <h3>Add Task:</h3>
-<div class="border-2">
-    <form method="post">
 
-        <input asp-for="JobId" type="hidden" />
+<form method="post">
+
+    <input asp-for="JobId" type="hidden" />
+
+    <div class="row">
 
         @* Job (Required) *@
-        <label asp-for="JobName" class="form-label">Task Name:</label>
-        <input asp-for="JobName" class="form-control"/>
-        <br />
+        <div class="col-6">
+            <label asp-for="JobName" class="form-label">Task Name:</label>
+            <input asp-for="JobName" class="form-control"/>
+        </div>
 
         @* Due Date (Not Required) *@
-        <label asp-for="DueDate" class="form-label">Due Date (format mm/dd/year):</label>
-        <input asp-for="DueDate" class="form-control" />
-        <br />
+        <div class="col-6">
+            <label asp-for="DueDate" class="form-label">Due Date:</label>
+            <input asp-for="DueDate" class="form-control" type="date" />
+        </div>
+
+    </div>
+
+    <div class="row">
 
         @* Quadrant (Required) *@
-        <label asp-for="Quadrant" class="form-label">Quadrant:</label>
-        <input asp-for="Quadrant" class="form-control" />
-        <br />
+        <div class="col-6">
+            <label asp-for="Quadrant" class="form-label">Quadrant:</label>
+            <input asp-for="Quadrant" class="form-control" />
+        </div>
 
         @* Category (Not Required, Dropdown: Home, School, Work, Church) *@
-        <label asp-for="Category" class="form-label">Category:</label>
-        <select asp-for="Category" class="form-select form-select-md">
-            <option value="Home">Home</option>
-            <option value="School">School</option>
-            <option value="Work">Work</option>
-            <option value="Church">Church</option>
-        </select>
-        <br />
+        <div class="col-6">
+            <label asp-for="Category" class="form-label">Category:</label>
+            <select asp-for="Category" class="form-select form-select-md">
+                <option value="Home">Home</option>
+                <option value="School">School</option>
+                <option value="Work">Work</option>
+                <option value="Church">Church</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="row">
 
         @* Completed (Not Required, True/False) *@
-        <label asp-for="Completed" class="form-label">Completed:</label>
-        <select asp-for="Completed" class="form-select form-select-md">
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-        </select>
-        <br />
+        <div class="col-6">
+            <label asp-for="Completed" class="form-label">Completed:</label>
+            <select asp-for="Completed" class="form-select form-select-md">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
 
-        @* Submit Button *@
-        <button type="submit" class="btn btn-secondary">Add/Edit Task</button>
+    </div>
 
-        @* Validate Form *@
-        <div asp-validation-summary="All"></div>
+    <br />
 
-    </form>
-</div>
+    @* Submit Button *@
+    <button type="submit" class="btn btn-secondary">Add/Edit Task</button>
+
+    @* Validate Form *@
+    <div asp-validation-summary="All"></div>
+
+</form>
