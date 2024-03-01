@@ -17,7 +17,9 @@ namespace Mission08_Team0301.Models
         [Required]
         public int Quadrant { get; set; }
 
-        public string? Category { get; set; }
+        [ForeignKey("CategoryId")]
+        public int? CategoryId { get; set; }
+        public Category? Category { get; set; }
 
         [Required]
         public bool Completed { get; set; }
