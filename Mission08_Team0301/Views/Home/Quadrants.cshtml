@@ -27,7 +27,7 @@
                         <tr>
                             <td>@t.JobName</td>
                             <td>@t.DueDate</td>
-                            <td>@t.Category</td>
+                            <td>@t.Category?.CategoryName</td>
                             <td>
                                 <form asp-controller="Home" asp-action="Complete" asp-route-id="@t.JobId" method="post">
                                     <button class="btn btn-success" type="submit">Complete</button>
@@ -60,7 +60,7 @@
                         <tr>
                             <td>@t.JobName</td>
                             <td>@t.DueDate</td>
-                            <td>@t.Category</td>
+                            <td>@t.Category?.CategoryName</td>
                             <td>
                                 <form asp-controller="Home" asp-action="Complete" asp-route-id="@t.JobId" method="post">
                                     <button class="btn btn-success" type="submit">Complete</button>
@@ -95,7 +95,7 @@
                         <tr>
                             <td>@t.JobName</td>
                             <td>@t.DueDate</td>
-                            <td>@t.Category</td>
+                            <td>@t.Category?.CategoryName</td>
                             <td>
                                 <form asp-controller="Home" asp-action="Complete" asp-route-id="@t.JobId" method="post">
                                     <button class="btn btn-success" type="submit">Complete</button>
@@ -128,7 +128,7 @@
                         <tr>
                             <td>@t.JobName</td>
                             <td>@t.DueDate</td>
-                            <td>@t.Category</td>
+                            <td>@t.Category?.CategoryName</td>
                             <td>
                                 <form asp-controller="Home" asp-action="Complete" asp-route-id="@t.JobId" method="post">
                                     <button class="btn btn-success" type="submit">Complete</button>

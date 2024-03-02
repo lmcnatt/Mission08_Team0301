@@ -1,4 +1,6 @@
-﻿namespace Mission08_Team0301.Models
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace Mission08_Team0301.Models
 {
     public class EFJobRepository : IJobRepository
     {
@@ -8,7 +10,9 @@
         {
             _context = temp;
         }
-        public List<Job> Jobs => _context.Jobs.ToList();
+        public List<Job> Jobs => _context.Jobs.Include("Category").ToList();
+
+        public List<Category> Categories => _context.Categories.ToList();
 
         public void AddJob(Job job)
         {

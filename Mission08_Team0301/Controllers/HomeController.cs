@@ -21,6 +21,8 @@ namespace Mission08_Team0301.Controllers
         [HttpGet]
         public IActionResult JobForm()
         {
+            var categories = _repo.Categories;
+            ViewBag.Categories = categories;
             return View(new Job());
         }
 
@@ -58,6 +60,9 @@ namespace Mission08_Team0301.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            var categories = _repo.Categories;
+            ViewBag.Categories = categories;
+
             var job = _repo.Jobs
                 .Single(x => x.JobId == id);
 

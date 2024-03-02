@@ -38,12 +38,12 @@
 
         @* Category (Not Required, Dropdown: Home, School, Work, Church) *@
         <div class="col-6">
-            <label asp-for="Category" class="form-label">Category:</label>
-            <select asp-for="Category" class="form-select form-select-md">
-                <option value="Home">Home</option>
-                <option value="School">School</option>
-                <option value="Work">Work</option>
-                <option value="Church">Church</option>
+            <label asp-for="CategoryId" class="form-label">Category:</label>
+            <select asp-for="CategoryId" class="form-select form-select-md">
+                @foreach (Category c in ViewBag.Categories)
+                {
+                    <option value="@c.CategoryId">@c.CategoryName</option>
+                }
             </select>
         </div>
 

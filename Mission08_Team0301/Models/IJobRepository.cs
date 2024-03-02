@@ -4,6 +4,8 @@
     {
 
         List<Job> Jobs { get; }
+        List<Category> Categories { get; }
+
         public void AddJob(Job job);
         public void CompleteJob(Job job);
         public void EditJob(Job UpdatedJob);
